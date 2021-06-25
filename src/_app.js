@@ -1,9 +1,10 @@
+import { useRef } from 'react';
+
 import api from './api';
 
 function App() {
-
   const getMeaning = async () => {
-    const data = await api.get('/palavra');
+    const data = await api.get('/teste');
 
     console.log(data)
   }
@@ -14,13 +15,12 @@ function App() {
         <h1>
           dicio.sc
         </h1>
+        <input type="text" placeholder="Digite uma palavra" />
         <button
           className="App-link"
-          target="_blank"
-          rel="noopener noreferrer"
           onClick={getMeaning}
         >
-          Buscar palavra
+          Buscar significado
         </button>
       </header>
     </div>
