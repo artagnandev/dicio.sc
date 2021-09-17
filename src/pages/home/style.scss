@@ -19,7 +19,7 @@
     align-items: center;
 
     &__title,
-    > img {
+    &__logo {
       color: $blue;
       font-weight: 600;
       line-height: 127px;
@@ -42,7 +42,7 @@
       border: solid 2px $blue;
       min-width: 770px;
 
-      &--input {
+      &__input {
         height: 100%;
         width: 100%;
         padding: 16px 24px;
@@ -57,7 +57,7 @@
         }
       }
 
-      &--button {
+      &__button {
         background-color: white;
         padding: 14px 24px;
         border-radius: 8px;
