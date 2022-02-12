@@ -25,7 +25,7 @@ function Home() {
           <input 
             type="text"
             ref={inputRef}
-            placeholder="Uma palavra, vários significados..." 
+            placeholder="Digite uma palavra..." 
             className="app__search__target__input" 
           />
 

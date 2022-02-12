@@ -141,6 +141,7 @@
           border-color: $blue;
 
           .meaning-text {
+            cursor: text;
             color: $blue;
           }
 
@@ -159,8 +160,8 @@
 
         &-text {
           width: 100%;
-          font-size: 20px;
           color: $dark;
+          font-size: 20px;
           font-weight: 500;
           margin-right: 75px;
           transition: ease .2s;

@@ -11,7 +11,6 @@ import slug from '../../services/slug'
 import spinner from '../../img/spinner.gif';
 
 import { 
-  BsSearch as IconSearch, 
   BsArrowLeft as IconArrowLeft,
 } from "react-icons/bs";
 
@@ -19,7 +18,6 @@ import {
   FiEdit3 as IconEdit,
   FiX as IconRemove,
   FiPrinter as IconPrinter,
-  FiTv as IconTv
 } from "react-icons/fi";
 
 const Meanings = ( { match } ) => {
@@ -38,10 +36,10 @@ const Meanings = ( { match } ) => {
     setHasMeanings(true);
     setLoading(false);
 
-    window.document.title = `DISCIO: Significado de ${word}`
+    window.document.title = `DISCIO: ${word}`
   }
 
-  const hidden = (event) => event.target.parentElement.parentElement.classList.add('is-hide')
+  const remove = (event) => event.target.parentElement.parentElement.classList.add('is-hide')
 
   const edit = (event) => {
     event.target
@@ -121,7 +119,7 @@ const Meanings = ( { match } ) => {
                               <div 
                                 title="Remover"
                                 className="remove"
-                                onClick={(e) => hidden(e)}
+                                onClick={(e) => remove(e)}
                               >
                                 <IconRemove />
                               </div>
