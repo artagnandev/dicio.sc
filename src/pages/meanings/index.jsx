@@ -65,7 +65,7 @@ const Meanings = ( { match } ) => {
   return (
     <div className="meanings">
       {
-        loading === true
+        loading === true && ! hasMeanings
         ? (
           <div className="spinner">
             <img src={spinner} alt="Loading..." className="spinner-gif" />
@@ -85,9 +85,6 @@ const Meanings = ( { match } ) => {
                 <button className="print" onClick={() => print()}>
                   <IconPrinter /> Imprimir
                 </button>
-                {/* <a href={window.location.pathname} target="_blank" className="show" rel="noreferrer">
-                  <IconTv /> Jogar na tela
-                </a> */}
               </div>
             </div>
           
@@ -99,10 +96,6 @@ const Meanings = ( { match } ) => {
                 && meanings.map(meaning => (
 
                   <div key={meaning.class}>
-
-                    {/* <h4 className="class"> {meaning.class} </h4>
-                    <p className="etymology"> {meaning.etymology} </p> */}
-
                     <ul className="list">
                       {
                         meaning.meanings?.map(meaning => (
@@ -134,7 +127,6 @@ const Meanings = ( { match } ) => {
               }
             </div>
           </>
-
         )
       }
   </div>
