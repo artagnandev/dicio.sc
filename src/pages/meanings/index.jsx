@@ -11,7 +11,6 @@ import slug from '../../services/slug'
 import spinner from '../../img/spinner.gif';
 
 import { 
-  BsSearch as IconSearch, 
   BsArrowLeft as IconArrowLeft,
 } from "react-icons/bs";
 
@@ -19,7 +18,6 @@ import {
   FiEdit3 as IconEdit,
   FiX as IconRemove,
   FiPrinter as IconPrinter,
-  FiTv as IconTv
 } from "react-icons/fi";
 
 const Meanings = ( { match } ) => {
@@ -38,10 +36,10 @@ const Meanings = ( { match } ) => {
     setHasMeanings(true);
     setLoading(false);
 
-    window.document.title = `DISCIO: Significado de ${word}`
+    window.document.title = `DISCIO: ${word}`
   }
 
-  const hidden = (event) => event.target.parentElement.parentElement.classList.add('is-hide')
+  const remove = (event) => event.target.parentElement.parentElement.classList.add('is-hide')
 
   const edit = (event) => {
     event.target
@@ -67,7 +65,7 @@ const Meanings = ( { match } ) => {
   return (
     <div className="meanings">
       {
-        loading === true
+        loading === true && ! hasMeanings
         ? (
           <div className="spinner">
             <img src={spinner} alt="Loading..." className="spinner-gif" />
@@ -87,9 +85,6 @@ const Meanings = ( { match } ) => {
                 <button className="print" onClick={() => print()}>
                   <IconPrinter /> Imprimir
                 </button>
-                {/* <a href={window.location.pathname} target="_blank" className="show" rel="noreferrer">
-                  <IconTv /> Jogar na tela
-                </a> */}
               </div>
             </div>
           
@@ -101,10 +96,6 @@ const Meanings = ( { match } ) => {
                 && meanings.map(meaning => (
 
                   <div key={meaning.class}>
-
-                    {/* <h4 className="class"> {meaning.class} </h4>
-                    <p className="etymology"> {meaning.etymology} </p> */}
-
                     <ul className="list">
                       {
                         meaning.meanings?.map(meaning => (
@@ -121,7 +112,7 @@ const Meanings = ( { match } ) => {
                               <div 
                                 title="Remover"
                                 className="remove"
-                                onClick={(e) => hidden(e)}
+                                onClick={(e) => remove(e)}
                               >
                                 <IconRemove />
                               </div>
@@ -136,7 +127,6 @@ const Meanings = ( { match } ) => {
               }
             </div>
           </>
-
         )
       }
   </div>
